@@ -1,0 +1,132 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap 5 CSS Inclusion (12/10/2022) (This was shown below meta tags listed below, so if something doesn't work try moving this)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap 5 CSS Inclusion (12/10/2022)-->
+    <style>
+        .basepair-bar {
+            border: 1pt solid black;
+            width: 2px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            align-self: end;
+
+        }
+        .flex-container{
+            display:flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            height:150px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="m-2 p-2">
+    <header class="container-fluid bg-secondary p-5 text-light text-center" id="titlebar">
+        <h1>
+            DNA -&gt m.RNA Transcription and Translation Visualizer
+        </h1>
+        <p>
+            By : Donovan Banks
+        </p>
+    </header>
+    <!-- Gonna do a rewrite and change the container structure -->
+    <div class="container-fluid m-2 p-2 " id="rootvisualizer">
+        <div class="row flex-container" id="dnatopbars">
+            dna top
+        </div>
+        <div class="row flex-container" id="dnabottombars">
+            dna bottom
+        </div>
+        <div class="row flex-container" id="rnabars">
+            rna
+        </div>
+        <div class="row flex-container" id="proteins">
+            protein
+        </div>
+    </div>
+    <footer class="container-fluid bg-secondary p-3 m-2 fixed-bottom" id="userinputbar">
+        <div class="row border p-2 m-2">
+            <label class="border col-sm-1 bg-light text-sm-right" for="dnainput">
+                DNA Sequence: 
+            </label>
+            <input class="border col-sm-10" id="dnainput" name="dnainput">
+            </input>
+            <button type="button" class="border col-sm-1 btn btn-secondary text-center" onclick="visualize()">
+                <h6>Visualize</h6>
+            </button>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS Inclusion (12/10/2022)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5 JS Inclusion (12/10/2022)-->
+    <script>
+        /*
+        Essentially the main function
+        */
+        function visualize(){
+            const dna_sequence = document.getElementById("dnainput").value; // Gets the string represeting the textbox
+            console.log("Hello World!");
+            console.log(dna_sequence);
+            const dna_bottom_sequence = dna_top_to_bottom(dna_sequence);
+            console.log (dna_bottom_sequence);
+            const mrna_sequence = dna_bottom_to_mrna(dna_bottom_sequence);
+            console.log (mrna_sequence);
+            generate_basepairs("dnatopbars",dna_sequence)
+        }
+        /*
+
+        Converts text ATCG to TAGC according to dna compliments.
+
+        */
+        function dna_top_to_bottom(topsequence){
+            let bottomsequence = "";
+            for (let i= 0; i < topsequence.length; i++){
+                if (topsequence[i] == "A"){
+                    bottomsequence = bottomsequence + "T";
+                }
+                else if (topsequence[i] == "T"){
+                    bottomsequence = bottomsequence + "A";
+                }
+                else if (topsequence[i] == "C"){
+                    bottomsequence = bottomsequence + "G";
+                }
+                else if (topsequence[i] == "G"){
+                    bottomsequence = bottomsequence + "C";
+                }
+            }
+            return bottomsequence;
+        }
+
+        function dna_bottom_to_mrna(bottom_sequence){
+            let mrna = "";
+            for (let i=0; i < bottom_sequence.length; i++){
+                if(bottom_sequence[i] == "T"){
+                    mrna = mrna + "U";
+                }
+                else {
+                    mrna = mrna + bottom_sequence[i];
+                }
+            }
+            return mrna;
+        }
+
+        function generate_basepairs(location, sequence){
+            const basepairs = document.querySelector("#"+location);
+
+            for (let i = 0; i<sequence.length; i++){
+                const basepair = document.createElement("div");
+                basepair.style.height = '50px';
+                basepair.classList.add("basepair");
+                basepair.classList.add("bg-danger")
+                basepair.classList.add("basepair-bar")
+                basepairs.appendChild(basepair);
+            }
+        }
+    </script>
+</body>
+</html>
