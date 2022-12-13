@@ -35,11 +35,167 @@ body{
     width: 100%;
     box-sizing:border-box;
     background-color: rgb(40,40,45);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     margin: 0 0 10px 0;
     position:  sticky;
     top: 0;
+}
+#foot-bar{
+    color: wheat;
+    width: 100%;
+    box-sizing:border-box;
+    background-color: rgb(40,40,45);
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+}
+
+.bottom-label{
+    padding:5px;
+}
+
+/* Maybe rename flex-container if everything breaks?*/
+#main-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 95%;
+    position:absolute;
+}
+.temp-element{
+    border-width: 1px;
+    border-color: white;
+    background-color: wheat;
+    border-style: solid;
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+}
+/* Remember to comment out border below*/
+#trascription-element-container{
+    border-width: 1px;
+    border-color: green;
+    border-style: solid;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 2px;
+    margin-bottom: 5px;
+
+}
+
+.nucleic-acid-block{
+    border-width: 1px;
+    border-color: black;
+    border-style: dotted;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:medium;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+
+.dna-block{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.mrna-block{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    height: 70px;
+    display: flex;
+}
+
+/* DNA and RNA containers are flexboxes..? 
+We want the container to overall be a heigh of 100px
+REMEMBER THAT!
+
+*/
+/*
+This is to reduce repitition, all nucleic acid blocks
+have a border and no margins L/R
+*/
+.nucleic-acid{
+    padding:1px;
+    border-width: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-style:solid;
+}
+
+/*
+This is to reduce repition, all up acid blocks are margin-0
+on top and margin 5 on bottom. (They must also come first in their inner div).
+*/
+.acid-top{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+/*
+This is to reduce repition, all down acid blocks are margin-0
+on bottom and margin 5 on top (opposite, acid up). (They must also
+come last or second in their inner div)
+*/
+.acid-bottom{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.acid-mrna{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    position: absolute;
+    bottom: 7px;
+}
+
+.acid-a{
+    background-color: red;
+    border-color:darkred;
+    height: 60px
+}
+.acid-t{
+    background-color: green;
+    border-color:darkgreen;
+    height: 30px;
+}
+.acid-c{
+    background-color: orange;
+    border-color: darkorange;
+    height: 50px;
+}
+.acid-g{
+    background-color:cyan;
+    border-color:darkcyan;
+    height: 40px;
+}
+.acid-u{
+    background-color:orchid;
+    border-color:darkorchid;
+    height: 30px;
+}
+
+.a-down{
+    padding: 1px;
+    background-color: red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkred;
+    height: 60px;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:5px;
+}
+
+.t-up{
+    padding: 1px;
+    background-color: green;
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkgreen;
+    height: 30px;
+    margin-top:5px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
 }

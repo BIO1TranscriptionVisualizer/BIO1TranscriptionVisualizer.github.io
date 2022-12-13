@@ -10,15 +10,105 @@
 <body>
     <!-- H1 is just the title-->
     <h1 id="title-text">Transcription Visualizer</h1>
-    <div class="main-container">
-        Hello World!
+    <div id="main-container">
+        <div id="trascription-element-container">
+            <div class="nucleic-acid-block dna-block">
+                <p class="nucleic-acid acid-top acid-a">
+                    A
+                </p>
+                <p class="nucleic-acid acid-bottom acid-t">
+                    T
+                </p>
+            </div>
+            <div class="nucleic-acid-block mrna-block">
+                <p class="nucleic-acid acid-mrna acid-u"> 
+                    U 
+                </p>
+            </div>
+            
+        </div>
+
+        <div id="trascription-element-container">
+            <div class="nucleic-acid-block dna-block">
+                <p class="nucleic-acid acid-top acid-t">
+                    T
+                </p>
+                <p class="nucleic-acid acid-bottom acid-a">
+                    A
+                </p>
+            </div>
+            <div class="nucleic-acid-block mrna-block">
+                <p class="nucleic-acid acid-mrna acid-a"> 
+                    A 
+                </p>
+            </div>
+            
+        </div>
+
+        <div id="trascription-element-container">
+            <div class="nucleic-acid-block dna-block">
+                <p class="nucleic-acid acid-top acid-c">
+                    C
+                </p>
+                <p class="nucleic-acid acid-bottom acid-g">
+                    G
+                </p>
+            </div>
+            <div class="nucleic-acid-block mrna-block">
+                <p class="nucleic-acid acid-mrna acid-g"> 
+                    G 
+                </p>
+            </div>
+            
+        </div>
+
+        <div id="trascription-element-container">
+            <div class="nucleic-acid-block dna-block">
+                <p class="nucleic-acid acid-top acid-g">
+                    G
+                </p>
+                <p class="nucleic-acid acid-bottom acid-c">
+                    C
+                </p>
+            </div>
+            <div class="nucleic-acid-block mrna-block">
+                <p class="nucleic-acid acid-mrna acid-c"> 
+                    C 
+                </p>
+            </div>
+            
+        </div>
+
+        <!--
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        <p class="temp-element">Temp</p>
+        -->
     </div>
     <!-- Footer Contains Button/Textbox and Note-->
-    <footer>
+    <footer id="foot-bar">
         <form>
-            <label for="transcriber-in"> Enter Sequence to Transcribe:</label><br>
-            <input type="text" id="transcriber-in" name="transcriber-in">
-            <input type="submit" value="Transcribe">
+            <label class="bottom-label" for="transcriber-in"> Enter Sequence to Transcribe:</label><br>
+            <input class="bottom-label" type="text" id="transcriber-in" name="transcriber-in">
+            <input class="bottom-label" type="submit" value="Transcribe">
         </form>
     </footer>
 </body>
