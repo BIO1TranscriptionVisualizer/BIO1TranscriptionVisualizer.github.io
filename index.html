@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Putting the script here seems to load it in before the page so the button knows what
+function it's actually using. -->
+<script src="main.js"></script>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -10,8 +14,9 @@
 <body>
     <!-- H1 is just the title-->
     <h1 id="title-text">Transcription Visualizer</h1>
-    <div id="main-container">
-        <div id="trascription-element-container">
+    <div id="transcription-container">
+        <div class="transcription-element-container">
+            <!--
             <div class="nucleic-acid-block dna-block">
                 <p class="nucleic-acid acid-top acid-a">
                     A
@@ -25,10 +30,9 @@
                     U 
                 </p>
             </div>
-            
         </div>
 
-        <div id="trascription-element-container">
+        <div class="transcription-element-container">
             <div class="nucleic-acid-block dna-block">
                 <p class="nucleic-acid acid-top acid-t">
                     T
@@ -42,74 +46,15 @@
                     A 
                 </p>
             </div>
-            
         </div>
-
-        <div id="trascription-element-container">
-            <div class="nucleic-acid-block dna-block">
-                <p class="nucleic-acid acid-top acid-c">
-                    C
-                </p>
-                <p class="nucleic-acid acid-bottom acid-g">
-                    G
-                </p>
-            </div>
-            <div class="nucleic-acid-block mrna-block">
-                <p class="nucleic-acid acid-mrna acid-g"> 
-                    G 
-                </p>
-            </div>
-            
-        </div>
-
-        <div id="trascription-element-container">
-            <div class="nucleic-acid-block dna-block">
-                <p class="nucleic-acid acid-top acid-g">
-                    G
-                </p>
-                <p class="nucleic-acid acid-bottom acid-c">
-                    C
-                </p>
-            </div>
-            <div class="nucleic-acid-block mrna-block">
-                <p class="nucleic-acid acid-mrna acid-c"> 
-                    C 
-                </p>
-            </div>
-            
-        </div>
-
-        <!--
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
-        <p class="temp-element">Temp</p>
         -->
+
     </div>
     <!-- Footer Contains Button/Textbox and Note-->
     <footer id="foot-bar">
-        <form>
-            <label class="bottom-label" for="transcriber-in"> Enter Sequence to Transcribe:</label><br>
-            <input class="bottom-label" type="text" id="transcriber-in" name="transcriber-in">
-            <input class="bottom-label" type="submit" value="Transcribe">
-        </form>
+        <label class="bottom-label" for="transcriber-in"> Enter Sequence to Transcribe:</label><br>
+        <input class="bottom-label" type="text" id="transcriber-in" name="transcriber-in">
+        <input class="bottom-label" type="submit" value="Transcribe" onclick="main()">
     </footer>
 </body>
 </html>
